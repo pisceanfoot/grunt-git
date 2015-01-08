@@ -41,6 +41,9 @@ module.exports = function (grunt) {
                     opts: spawnOpts
                 }, function () {
                     callback.apply(this, arguments);
+                    if(options.consoleCallback){
+                        options.consoleCallback.apply(self, arguments);
+                    }
                 });
             }
 
